@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="book-wrap">
+        <div id="cover" class="book-cover" onclick="openBook()">
+            <div class="spine"></div>
+            <div class="cover-design">
+                <span class="gold-ornament">❦</span>
+                <h1>To My Valentine</h1>
+                <div class="heart-seal">❤</div>
+                <p class="click-to-open">Open Our Story</p>
+                <span class="gold-ornament">❦</span>
+            </div>
+        </div>
+
+        <main id="main-content" class="book-inside">
+            <div class="paper-texture"></div>
+            
+            <nav class="tabs">
+                <button class="tab-btn active" onclick="showTab(event, 'memories')">Memories</button>
+                <button class="tab-btn" onclick="showTab(event, 'letter')">Letter</button>
+                <button class="tab-btn" onclick="showTab(event, 'reasons')">Why You</button>
+                <button class="tab-btn" onclick="showTab(event, 'date')">Invitation</button>
+            </nav>
+
+            <div class="scroll-container">
+                <article id="memories" class="tab-content active">
+                    <h2 class="script-font">Treasured Moments</h2>
+                    
+                    <div class="media-frame">
+                        <img src="assets/1.jpg" alt="Memory 1">
+                        <p class="caption">She is amazing</p>
+                    </div>
+
+                    <div class="media-frame video-frame">
+                        <video controls>
+                            <source src="assets/video.mp4" type="video/mp4">
+                        </video>
+                        <p class="caption">Having Fun at the park ❤️</p>
+                    </div>
+
+                    <div class="media-frame">
+                        <img src="assets/2.jpeg" alt="Memory 2">
+                        <p class="caption">I never forgot this day Diwali 2025, this is my best Diwali ever in my life 🥺</p>
+                    </div>
+                </article>
+
+                <article id="letter" class="tab-content">
+                    <h2 class="script-font">To, Love of my life</h2>
+                    <div class="handwritten-letter">
+                        <p> Happy Valentine’s Day, my love. ❤️
+                        Baby you made my life a beautiful chaotic adventures life, everyday is new adventure with you. Before you, I never truly understood what love meant. The day I met you, everything changed. You came into my life unexpectedly and became everything Loving you is the best thing that has ever happened to me.
+
+                        Your smile is my peace, no matter how stressful life gets. I can never get enough of you, and I want to spend every second growing, laughing, and building our future together. Your heart is the most beautiful thing about you, and that’s what made me fall so deeply in love.
+
+                        I may not be perfect, but I promise to always try to be the best partner for you. I promise to stand by you, respect you, and love you more with each passing day. I will never leave your side, and I will never be the reason for your tears.
+
+                        My love I can’t wait share this journey with you 
+
+                        You are my today and my forever.
+
+                        Happy Valentine’s Day, my love. 💕
+                        #Sakhi ( Saideepak Khushi )</p>
+                        
+                        <div class="media-frame small">
+                            <img src="assets/3.jpg" alt="Image 3">
+                            <p class="caption">This is the day where I started falling for you ❤️🥺</p>
+                        </div>
+
+                        <p class="big-question">Will you be my Valentine?</p>
+                        <p class="signature">Forever yours, <br> deepak</p>
+                    </div>
+                </article>
+
+                <article id="reasons" class="tab-content">
+                    <h2 class="script-font">Why I Love You</h2>
+                    <ul class="reasons-list">
+                        <li>You are the anchor for the people you love.</li>
+                        <li>You make my hard days easier and my good days brighter .</li>
+                        <li>Being with you feels like home, you are my dragging force to come home.</li>
+                        <li>You are my calm and chaos at same time.</li>
+                    </ul>
+                    <div class="media-frame">
+                        <img src="assets/4.jpg" alt="Image 4">
+                        <p class="caption">Your birthday should not be less than a festival and I’ll make sure to celebrate it</p>
+                    </div>
+                </article>
+
+                <article id="date" class="tab-content">
+                    <h2 class="script-font">Save the Date</h2>
+                    <div class="invitation-box">
+                        <p class="date-text"><strong>When:</strong> Feb 14th @ Lunch time</p>
+                        <p class="date-text"><strong>Where:</strong> Your Favourite place</p>
+                        <p class="date-text"><strong>Dress Code:</strong> Your Favourite style</p>
+                        <hr class="gold-line">
+                        <p class="invitation-footer"> I'll be waiting for you. ❤️</p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+    <audio id="magic-music" src="assets/magic.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
