@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Reminder 💊</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#ffd6e7,#d6f5ff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+
+.container{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+  width:90%;
+  max-width:350px;
+}
+
+h1{
+  font-size:24px;
+  margin-bottom:5px;
+}
+
+p{
+  color:#555;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.notify{
+  background:#ff7aa2;
+  color:white;
+}
+
+.calendar{
+  background:#6aa9ff;
+  color:white;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+.footer{
+  margin-top:15px;
+  font-size:12px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💊 Medicine Reminder</h1>
+<p>Take medicine at</p>
+<p><b>10:00 AM & 10:00 PM</b></p>
+
+<button class="notify" onclick="enableNotifications()">
+⏰ Enable Reminder Notifications
+</button>
+
+<button class="calendar" onclick="downloadICS()">
+📅 Add to Calendar
+</button>
+
+<div class="footer">
+Stay healthy 💗
+</div>
+
+</div>
+
+<script>
+
+function enableNotifications(){
+
+if(Notification.permission !== "granted"){
+Notification.requestPermission();
+}
+
+setInterval(checkTime,60000);
+
+alert("Notifications enabled! Keep this tab open for reminders.");
+}
+
+function checkTime(){
+
+const now = new Date();
+const hour = now.getHours();
+const minute = now.getMinutes();
+
+if(minute === 0 && (hour === 10 || hour === 22)){
+
+new Notification("💊 Medicine Time!",{
+body:"Take your medicine now 💗",
+icon:"https://cdn-icons-png.flaticon.com/512/2966/2966327.png"
+});
+
+}
+
+}
+
+function downloadICS(){
+
+const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Take Medicine
+DTSTART:20260307T100000
+DTEND:20260307T101000
+RRULE:FREQ=DAILY
+DESCRIPTION:Medicine Reminder
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Take Medicine
+DTSTART:20260307T220000
+DTEND:20260307T221000
+RRULE:FREQ=DAILY
+DESCRIPTION:Medicine Reminder
+END:VEVENT
+END:VCALENDAR`;
+
+const blob = new Blob([ics], {type:'text/calendar'});
+const link = document.createElement('a');
+link.href = URL.createObjectURL(blob);
+link.download = "medicine_reminder.ics";
+link.click();
+}
+
+</script>
+
+</body>
+</html>
